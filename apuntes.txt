@@ -1,0 +1,26 @@
+verbos de http:
+
+get = solicitar datos o algun recurso.
+head : traer headers, como una peticion Get, pero sin contenido.
+post : enviar datos a un recurso para la creacion. 
+put reemplazar por completo un recurso.
+delete: eliminar un recurso.
+
+codigos de estado son semanticos y indican en que parte ba la solicutd, si hay errores o hay que hacer algo mas
+estados;
+en centenas se dan los codigos:
+
+1xx indica que la peticion fue recivida y el servidor esta traajando en el proceso.
+2xx indica que la pericion fue recivida procesada y completada correctmente.
+3xx indica que hay que tomar acciones a dicionales para completar la solicitud por lo general estos idnican codigos de redireccion. (en las apis, no es comun que se haga una redireccion)
+4xx indica que solicitamos mal , que faltan datos headers, o cualquier otro error que pueda ocurrir.
+5xx errores del servidor espesificamente, fallo completo de la ejecucion.
+codigos mas usados:
+200 = todo esta bien, se retorna cuando get esta correcto.
+201 = estado que retorna una solicitud post, se hico correctamente, se creo y se guardo perfecto.
+204 = se proceso correctamente pero no devuelve ninguna informacion, comunmente se ve cuando se hace un delete.
+400 = bad request, se envio mal la solicutid, por le general este codigo trae devuelta lo que esta mal en la solicitud.
+401 = un autorzied, que debemos autenticarnos con el servidor antes de hacer la solicitud.
+403 = forviden, que no tenemos acceso asi estemos autenticados.
+404 =  no existe el recurso. es muy famoso.
+500 = es un internal server error, no pudo ser procesada y dio error.
